@@ -1,0 +1,28 @@
+---
+description: Base working rules for every change in this repository
+alwaysApply: true
+---
+
+# Base rules
+
+Read `AGENTS.md` at the repository root first. It lists the sources of truth, the non-negotiables and where code goes. These rules are how to work; that file is what to build against.
+
+## Before writing
+
+- Find the feature ID for the task and read its specification, including what it depends on.
+- Read the nearest existing code of the same kind and match its naming, structure and size.
+- If the specification is silent, two documents conflict, or a decision record is open: stop and ask. Do not guess.
+
+## While writing
+
+- Build the one slice that was asked for. No extra features, options or refactors.
+- Do not invent fields, routes, enum values or configuration that no document names.
+- Problems found outside the slice are reported, not fixed inline.
+- A contract change moves its types, client, server and test in the same change.
+
+## Before calling it done
+
+- Every acceptance criterion has a test, named after the feature ID.
+- The verify commands in `AGENTS.md` pass. Report failures as they are; never skip or silence a test to get to green.
+- The feature's specification is updated in the same change: status, ticked criteria, anything that changed.
+- Do not commit or push unless asked.
